@@ -1,9 +1,12 @@
-function App() {
+import React from "react";
+import Navbar from "./components/navbar";
+import { useLocation } from "react-router-dom";
+const App=() => {
+   const location = useLocation();
+  const isOwnerPath = location.pathname.includes("owner");
   return (
-    <div className="text-center p-10">
-      <h1 className="text-3xl font-bold underline text-blue-500">
-        Hello Vite + React + Tailwind!
-      </h1>
+    <div >
+   {!isOwnerPath && <Navbar/>}
     </div>
   );
 }
